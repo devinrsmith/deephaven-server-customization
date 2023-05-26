@@ -1,0 +1,64 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://packages.confluent.io/maven'
+        content {
+            includeGroup 'io.confluent'
+            includeGroup 'org.apache.kafka'
+        }
+    }
+}
+
+
+dependencies {
+    implementation libs.dh.server.jetty
+    implementation project(':my-startup-time-app')
+
+    implementation libs.dagger
+    annotationProcessor libs.dagger.compiler
+
+    // Logging
+    runtimeOnly libs.bundles.dh.runtime.logging
+
+    // Optional
+    runtimeOnly libs.dh.hotspot.impl
+    runtimeOnly libs.dh.clock.impl
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+def extraJvmArgs = [
+        '-server',
+        '-XshowSettings:vm',
+        // For arrow
+        '--add-opens', 'java.base/java.nio=ALL-UNNAMED',
+        // For deephaven-hotspot-impl
+        '--add-exports', 'java.management/sun.management=ALL-UNNAMED',
+        // For deephaven-clock-impl
+        '--add-exports', 'java.base/jdk.internal.misc=ALL-UNNAMED',
+]
+
+if (hasProperty('groovy')) {
+    extraJvmArgs += ['-Ddeephaven.console.type=groovy']
+}
+
+tasks.withType(JavaExec).configureEach {
+    // This appends to the existing jvm args, so that java-open-nio still takes effect
+    jvmArgs extraJvmArgs
+}
+
+tasks.withType(CreateStartScripts).configureEach {
+    defaultJvmOpts += extraJvmArgs
+}
+
+application {
+    mainClass = 'com.devinrsmith.MyDeephavenServer'
+}

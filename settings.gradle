@@ -1,0 +1,31 @@
+rootProject.name = 'deephaven-server-customization'
+
+include('server')
+include('my-startup-time-app')
+
+dependencyResolutionManagement {
+    versionCatalogs {
+        libs {
+            def dhGroup = 'io.deephaven'
+            def dh = version('deephaven', '0.24.2')
+            library('dh-server-jetty', dhGroup, 'deephaven-server-jetty').versionRef(dh)
+            library('dh-application-mode', dhGroup, 'deephaven-application-mode').versionRef(dh)
+            library('dh-engine-table', dhGroup, 'deephaven-engine-table').versionRef(dh)
+            library('dh-log-to-slf4j', dhGroup, 'deephaven-log-to-slf4j').versionRef(dh)
+            library('dh-logback-print-stream-globals', dhGroup, 'deephaven-logback-print-stream-globals').versionRef(dh)
+            library('dh-logback-logbuffer', dhGroup, 'deephaven-logback-logbuffer').versionRef(dh)
+            library('dh-hotspot-impl', dhGroup, 'deephaven-hotspot-impl').versionRef(dh)
+            library('dh-clock-impl', dhGroup, 'deephaven-clock-impl').versionRef(dh)
+
+            library('logback-classic', 'ch.qos.logback', 'logback-classic').version('1.4.7')
+
+            def daggerGroup = 'com.google.dagger'
+            def dagger = version('dagger', '2.46.1')
+            library('dagger', daggerGroup, 'dagger').versionRef(dagger)
+            library('dagger-compiler', daggerGroup, 'dagger-compiler').versionRef(dagger)
+
+            bundle('dh-runtime-logging', ['dh-log-to-slf4j', 'dh-logback-print-stream-globals', 'dh-logback-logbuffer', 'logback-classic'])
+        }
+    }
+}
+

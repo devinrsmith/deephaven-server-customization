@@ -1,0 +1,19 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api libs.dh.application.mode
+    implementation libs.dh.engine.table
+    compileOnly 'javax.inject:javax.inject:1'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
