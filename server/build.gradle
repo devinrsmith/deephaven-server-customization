@@ -25,6 +25,7 @@ dependencies {
     runtimeOnly libs.bundles.dh.runtime.logging
 
     // Optional
+    runtimeOnly libs.dh.engine.sql
     runtimeOnly libs.dh.hotspot.impl
     runtimeOnly libs.dh.clock.impl
 }
