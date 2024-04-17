@@ -18,7 +18,7 @@ dependencyResolutionManagement {
             library('dh-hotspot-impl', dhGroup, 'deephaven-hotspot-impl').versionRef(dh)
             library('dh-clock-impl', dhGroup, 'deephaven-clock-impl').versionRef(dh)
 
-            library('logback-classic', 'ch.qos.logback', 'logback-classic').version('1.4.7')
+            library('logback-classic', 'ch.qos.logback', 'logback-classic').version('1.5.5')
 
             def daggerGroup = 'com.google.dagger'
             def dagger = version('dagger', '2.46.1')
