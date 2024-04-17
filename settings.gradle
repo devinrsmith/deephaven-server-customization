@@ -21,7 +21,7 @@ dependencyResolutionManagement {
             library('logback-classic', 'ch.qos.logback', 'logback-classic').version('1.5.5')
 
             def daggerGroup = 'com.google.dagger'
-            def dagger = version('dagger', '2.46.1')
+            def dagger = version('dagger', '2.51.1')
             library('dagger', daggerGroup, 'dagger').versionRef(dagger)
             library('dagger-compiler', daggerGroup, 'dagger-compiler').versionRef(dagger)
 
