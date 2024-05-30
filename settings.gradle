@@ -7,7 +7,7 @@ dependencyResolutionManagement {
     versionCatalogs {
         libs {
             def dhGroup = 'io.deephaven'
-            def dh = version('deephaven', '0.33.3')
+            def dh = version('deephaven', '0.34.3')
             library('dh-server-jetty', dhGroup, 'deephaven-server-jetty').versionRef(dh)
             library('dh-application-mode', dhGroup, 'deephaven-application-mode').versionRef(dh)
             library('dh-engine-table', dhGroup, 'deephaven-engine-table').versionRef(dh)
