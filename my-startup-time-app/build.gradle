@@ -7,8 +7,9 @@ repositories {
 }
 
 dependencies {
-    api libs.dh.application.mode
-    implementation libs.dh.engine.table
+    api platform(libs.deephaven.bom)
+    api libs.deephaven.application.mode
+    implementation libs.deephaven.engine.table
     compileOnly 'javax.inject:javax.inject:1'
 }
 

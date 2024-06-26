@@ -15,19 +15,23 @@ repositories {
 
 
 dependencies {
-    implementation libs.dh.server.jetty
+    implementation platform(libs.deephaven.bom)
+    implementation libs.deephaven.server.jetty
     implementation project(':my-startup-time-app')
 
     implementation libs.dagger
     annotationProcessor libs.dagger.compiler
 
     // Logging
-    runtimeOnly libs.bundles.dh.runtime.logging
+    runtimeOnly libs.logback.classic
+    runtimeOnly libs.deephaven.log.to.slf4j
+    runtimeOnly libs.deephaven.logback.print.stream.globals
+    runtimeOnly libs.deephaven.logback.logbuffer
 
     // Optional
-    runtimeOnly libs.dh.engine.sql
-    runtimeOnly libs.dh.hotspot.impl
-    runtimeOnly libs.dh.clock.impl
+    runtimeOnly libs.deephaven.engine.sql
+    runtimeOnly libs.deephaven.hotspot.impl
+    runtimeOnly libs.deephaven.clock.impl
 }
 
 java {

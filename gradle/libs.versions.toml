@@ -1,0 +1,21 @@
+[versions]
+dagger = "2.51.1"
+deephaven = "0.34.3"
+logback = "1.5.6"
+
+[libraries]
+dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
+dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
+
+deephaven-application-mode = { module = "io.deephaven:deephaven-application-mode" }
+deephaven-bom = { module = "io.deephaven:deephaven-bom", version.ref = "deephaven" }
+deephaven-clock-impl = { module = "io.deephaven:deephaven-clock-impl" }
+deephaven-engine-sql = { module = "io.deephaven:deephaven-engine-sql" }
+deephaven-engine-table = { module = "io.deephaven:deephaven-engine-table" }
+deephaven-hotspot-impl = { module = "io.deephaven:deephaven-hotspot-impl" }
+deephaven-log-to-slf4j = { module = "io.deephaven:deephaven-log-to-slf4j" }
+deephaven-logback-print-stream-globals = { module = "io.deephaven:deephaven-logback-print-stream-globals" }
+deephaven-logback-logbuffer = { module = "io.deephaven:deephaven-logback-logbuffer" }
+deephaven-server-jetty = { module = "io.deephaven:deephaven-server-jetty" }
+
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
