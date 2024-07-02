@@ -1,38 +1,41 @@
 plugins {
-    id 'java-library'
-    alias(libs.plugins.spotless)
+  id 'java-library'
+  alias(libs.plugins.spotless)
 }
 
 repositories {
-    mavenCentral()
+  mavenCentral()
 }
 
 dependencies {
-    api platform(libs.deephaven.bom)
-    api libs.deephaven.application.mode
-    implementation libs.deephaven.engine.table
-    compileOnly 'javax.inject:javax.inject:1'
+  api platform(libs.deephaven.bom)
+  api libs.deephaven.application.mode
+  implementation libs.deephaven.engine.table
+  compileOnly 'javax.inject:javax.inject:1'
 
-    testImplementation platform(libs.junit.bom)
-    testImplementation libs.junit.jupiter.api
-    testRuntimeOnly libs.junit.jupiter.engine
+  testImplementation platform(libs.junit.bom)
+  testImplementation libs.junit.jupiter.api
+  testRuntimeOnly libs.junit.jupiter.engine
 
-    testImplementation platform(libs.assertj.bom)
-    testImplementation libs.assertj.core
+  testImplementation platform(libs.assertj.bom)
+  testImplementation libs.assertj.core
 }
 
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(11)
-    }
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(11)
+  }
 }
 
 test {
-    useJUnitPlatform()
+  useJUnitPlatform()
 }
 
 spotless {
-    java {
-        googleJavaFormat()
-    }
+  java {
+    googleJavaFormat()
+  }
+  groovyGradle {
+    greclipse().configFile("$rootDir/style/greclipse.properties")
+  }
 }
