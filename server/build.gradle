@@ -1,5 +1,6 @@
 plugins {
     id 'application'
+    alias(libs.plugins.spotless)
 }
 
 repositories {
@@ -37,6 +38,12 @@ dependencies {
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+spotless {
+    java {
+        googleJavaFormat()
     }
 }
 

@@ -4,22 +4,22 @@ import io.deephaven.appmode.ApplicationState;
 import io.deephaven.appmode.ApplicationState.Listener;
 import io.deephaven.engine.table.Table;
 import io.deephaven.engine.util.TableTools;
-
-import javax.inject.Inject;
 import java.time.Instant;
+import javax.inject.Inject;
 
 public class MyStartupTimeApplication implements ApplicationState.Factory {
 
-    @Inject
-    public MyStartupTimeApplication() {
-    }
+  @Inject
+  public MyStartupTimeApplication() {}
 
-    @Override
-    public ApplicationState create(Listener appStateListener) {
-        final ApplicationState state = new ApplicationState(appStateListener, "com.devinrsmith", "MyStartupTime");
-        final Instant now = Instant.now();
-        final Table startupTimestamp = TableTools.newTable(TableTools.instantCol("Timestamp", now));
-        state.setField("startup_timestamp", startupTimestamp);;
-        return state;
-    }
+  @Override
+  public ApplicationState create(Listener appStateListener) {
+    final ApplicationState state =
+        new ApplicationState(appStateListener, "com.devinrsmith", "MyStartupTime");
+    final Instant now = Instant.now();
+    final Table startupTimestamp = TableTools.newTable(TableTools.instantCol("Timestamp", now));
+    state.setField("startup_timestamp", startupTimestamp);
+    ;
+    return state;
+  }
 }
