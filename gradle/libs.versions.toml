@@ -19,11 +19,13 @@ deephaven-bom = { module = "io.deephaven:deephaven-bom", version.ref = "deephave
 deephaven-clock-impl = { module = "io.deephaven:deephaven-clock-impl" }
 deephaven-engine-sql = { module = "io.deephaven:deephaven-engine-sql" }
 deephaven-engine-table = { module = "io.deephaven:deephaven-engine-table" }
+deephaven-engine-test-utils = { module = "io.deephaven:deephaven-engine-test-utils" }
 deephaven-hotspot-impl = { module = "io.deephaven:deephaven-hotspot-impl" }
 deephaven-log-to-slf4j = { module = "io.deephaven:deephaven-log-to-slf4j" }
 deephaven-logback-print-stream-globals = { module = "io.deephaven:deephaven-logback-print-stream-globals" }
 deephaven-logback-logbuffer = { module = "io.deephaven:deephaven-logback-logbuffer" }
 deephaven-server-jetty = { module = "io.deephaven:deephaven-server-jetty" }
+deephaven-test-configs = { module = "io.deephaven:deephaven-test-configs" }
 
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 
@@ -34,6 +36,7 @@ assertj-core = { module = "org.assertj:assertj-core" }
 junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
 junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api" }
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine" }
+junit-vintage-engine = { module = "org.junit.vintage:junit-vintage-engine" }
 
 [plugins]
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }

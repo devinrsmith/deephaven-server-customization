@@ -17,9 +17,12 @@ public class MyStartupTimeApplication implements ApplicationState.Factory {
     final ApplicationState state =
         new ApplicationState(appStateListener, "com.devinrsmith", "MyStartupTime");
     final Instant now = Instant.now();
-    final Table startupTimestamp = TableTools.newTable(TableTools.instantCol("Timestamp", now));
+    final Table startupTimestamp = nowTable(now);
     state.setField("startup_timestamp", startupTimestamp);
-    ;
     return state;
+  }
+
+  static Table nowTable(Instant now) {
+    return TableTools.newTable(TableTools.instantCol("Timestamp", now));
   }
 }
