@@ -11,6 +11,13 @@ dependencies {
     api libs.deephaven.application.mode
     implementation libs.deephaven.engine.table
     compileOnly 'javax.inject:javax.inject:1'
+
+    testImplementation platform(libs.junit.bom)
+    testImplementation libs.junit.jupiter.api
+    testRuntimeOnly libs.junit.jupiter.engine
+
+    testImplementation platform(libs.assertj.bom)
+    testImplementation libs.assertj.core
 }
 
 java {
@@ -18,3 +25,8 @@ java {
         languageVersion = JavaLanguageVersion.of(11)
     }
 }
+
+test {
+    useJUnitPlatform()
+}
+
