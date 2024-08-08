@@ -1,6 +1,6 @@
 [versions]
 dagger = "2.51.1"
-deephaven = "0.35.2"
+deephaven = "0.35.3"
 logback = "1.5.6"
 
 # test versions
