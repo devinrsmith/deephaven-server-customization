@@ -41,6 +41,7 @@ public class MyComponentFactory extends ComponentFactoryBase<MyComponent> {
       includes = {
         JettyServerModule.class,
         CommunityDefaultsModule.class,
+        MyClientChannelFactoryModule.class,
       })
   public interface MyModule {
 
