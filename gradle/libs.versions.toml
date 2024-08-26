@@ -1,5 +1,5 @@
 [versions]
-dagger = "2.51.1"
+dagger = "2.52"
 deephaven = "0.36.1"
 logback = "1.5.6"
 
