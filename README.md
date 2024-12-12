@@ -1,6 +1,6 @@
 # deephaven-server-customization
 
-This is a work-in-progress that shows how one may customize the [Deephahven Server](https://github.com/deephaven/deephaven-core).
+This is a work-in-progress that shows how one may customize the [Deephaven Server](https://github.com/deephaven/deephaven-core).
 
 It is aimed at enterprises and advanced users who are familiar with Java.
 
