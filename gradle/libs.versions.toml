@@ -4,7 +4,7 @@ deephaven = "0.37.1"
 logback = "1.5.12"
 
 # test versions
-assertj = "3.26.3"
+assertj = "3.27.0"
 junit = "5.11.4"
 
 # plugin versions
