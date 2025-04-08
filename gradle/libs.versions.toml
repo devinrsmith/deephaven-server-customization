@@ -8,7 +8,7 @@ assertj = "3.27.3"
 junit = "5.11.4"
 
 # plugin versions
-spotless = "7.0.2"
+spotless = "7.0.3"
 
 [libraries]
 dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
