@@ -5,7 +5,7 @@ logback = "1.5.18"
 
 # test versions
 assertj = "3.27.3"
-junit = "5.11.4"
+junit = "5.13.1"
 
 # plugin versions
 spotless = "7.0.4"
@@ -37,6 +37,7 @@ junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
 junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api" }
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine" }
 junit-vintage-engine = { module = "org.junit.vintage:junit-vintage-engine" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }
 
 [plugins]
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
